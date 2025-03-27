@@ -1,1 +1,136 @@
- nk
+import React from "react";
+import "./sukon.css";
+import {  FaHeart, FaBookmark, FaQuestionCircle, FaComments,  FaClock, FaMoon,  FaFacebook, FaTwitter,  FaInstagram, FaWhatsapp 
+} from "react-icons/fa";
+const Navbar = () => (
+  <header className="header">
+    <div className="container">
+      <div className="logo">
+        <img src="/p.png" alt="SukoonSpace Logo" />
+        <h1>SukoonSpace</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#login" className="loginbtn">Login</a></li>
+          <li><a href="#register" className="registerbtn">Register</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+);
+const Hero = () => (
+  <section id="home" className="hero">
+    <div className="container">
+      <div className="hero-content">
+        <h2>Find Peace and Guidance in Your Spiritual Journey</h2>
+        <p>Persona</p>
+        <a href="#register" className="startbtn">Get Started</a>
+      </div>
+      <div className="hero-image">
+        <img src="/hero.png" alt="SukoonSpace Hero" />
+      </div>
+    </div>
+  </section>
+);
+const FeatureCard = ({ icon, title, description }) => (
+  <div className="feature-card">
+    {icon}
+    <h3>{title}</h3>
+    <p>{description}</p>
+  </div>
+);
+const Features = () => (
+  <section id="features" className="features">
+    <div className="container">
+      <h2>Our Features</h2>
+      <div className="feature-grid">
+        <FeatureCard 
+          icon={<FaHeart />} 
+          title="Emotion-Based Content" 
+          description="Get personalized duas, Quranic ayat, and hadith based on your emotions." />
+        <FeatureCard 
+          icon={<FaBookmark />} 
+          title="Bookmarking" 
+          description="Save your favorite content for easy access later." 
+        />
+        <FeatureCard 
+          icon={<FaQuestionCircle />} 
+          title="Islamic Quizzes" 
+          description="Test your knowledge with interactive quizzes." 
+        />
+        <FeatureCard 
+          icon={<FaComments />} 
+          title="Discussion Forum" 
+          description="Ask questions and share knowledge with the community." 
+        />
+        <FeatureCard 
+          icon={<FaClock />} 
+          title="Prayer Times" 
+          description="Get location-based prayer timings and Qibla direction." 
+        />
+        <FeatureCard 
+          icon={<FaMoon />} 
+          title="Dark Mode" 
+          description="Switch to a night-friendly mode for comfortable reading." 
+        />
+      </div>
+    </div>
+  </section>
+);
+const About = () => (
+  <section id="about" className="about">
+    <div className="container">
+      <h2>About SukoonSpace</h2>
+      <p>SukoonSpace is a</p>
+    </div>
+  </section>
+);
+const Footer = () => (
+  <footer>
+    <div className="container">
+      <div className="footer-content">
+        <div className="footer-logo">
+          <img src="/p.png" alt="SukoonSpace Logo" />
+          <h3>SukoonSpace</h3>
+        </div>
+        <div className="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#login">Login</a></li>
+            <li><a href="#register">Register</a></li>
+          </ul>
+        </div>
+        <div className="footer-social">
+          <h4>Follow Us</h4>
+          <div className="social-icons">
+            <a href="#"><FaFacebook /></a>
+            <a href="#"><FaTwitter /></a>
+            <a href="#"><FaInstagram /></a>
+            <a href="#"><FaWhatsapp /></a>
+          </div>
+        </div>
+      </div>
+      <div className="footer-bottom">
+        <p>&copy; 2025 SukoonSpace. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+);
+const App = () => {
+  return (
+    <>
+      <Navbar />
+      <Hero />
+      <Features />
+      <About />
+      <Footer />
+    </>
+  );
+};
+export default App;
